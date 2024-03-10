@@ -11,7 +11,6 @@ import (
 )
 
 func main() {
-	// test
 	r := chi.NewRouter()
 
 	// 	未登陆成功前访问如何路径都会被重定向到/signin
@@ -27,6 +26,7 @@ func main() {
 		))))
 
 	// 登陆成功后才可以访问其他路径
+
 	r.Group(func(r chi.Router) {
 		// 验证中间件
 		r.Use(controllers.AuthMiddleware)
